@@ -1,8 +1,8 @@
 package entities;
 
 public class Rettangolo {
-    public double altezza;
-    public double larghezza;
+    private double altezza;
+    private double larghezza;
 
 
     public Rettangolo(double altezza, double larghezza){
@@ -18,12 +18,15 @@ public class Rettangolo {
         return larghezza * altezza;
     }
 
-    public void stampaRettangolo(){
-        System.out.println("Il perimetro è: " + this.getPerimeter());
-        System.out.println("L'area è: " + this.getArea());
+    public static void stampaRettangolo(Rettangolo rettangolo){
+        System.out.println("Il perimetro è: " + rettangolo.getPerimeter());
+        System.out.println("L'area è: " + rettangolo.getArea());
     }
 
-    public void stampaDueRettangoli(){
-        System.out.println();
+    public static void stampaDueRettangoli(Rettangolo rettangolo1, Rettangolo rettangolo2){
+        stampaRettangolo(rettangolo1);
+        stampaRettangolo(rettangolo2);
+        System.out.println(rettangolo1.getArea() + rettangolo2.getArea() );
+        System.out.println(rettangolo1.getPerimeter() + rettangolo2.getPerimeter());
     }
 }
